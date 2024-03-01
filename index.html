@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper{
+      width: 100vw;
+      height: 100vh;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      background-color: white;
+      transition: all 0.4s; 
+
+    }
+    
+    .btn {
+      padding-left: 13px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background-color: grey; /* Change the order of background colors if needed */
+  border-top-left-radius: 25px; /* Adjust the value for the desired radius */
+  border-bottom-left-radius: 25px; /* Adjust the value for the desired radius */
+  border-top-right-radius: 25px; /* Adjust the value for the desired radius */
+  border-bottom-right-radius: 25px; /* Adjust the value for the desired radius */
+}
+
+    .circle{
+    position: absolute;
+      border-radius: 50%;
+      background-color: black;
+      width: 60px;
+      height: 50px;
+      transition: all 0.5s; 
+      
+
+    }
+    .icon{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+
+<script src="https://kit.fontawesome.com/22234f8d90.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="btn">
+      <div class="icon">
+        <i class="fa-solid fa-moon"></i>
+      <i class="fa-solid fa-sun"></i>
+      </div>
+
+      <div class="circle">
+
+      </div>
+      
+
+    </div>
+    
+    <h1>CLICK THE TOGGLE BUTTON</h1>
+  </div>
+  <script>
+    let btn1 = document.querySelector('.btn');
+    let rap=document.querySelector('.wrapper');
+    let ele=document.getElementsByTagName('h1')[0];
+    let circle=document.querySelector('.circle');
+    btn1.addEventListener('click', () => {
+      let bgColor = rap.style.backgroundColor;
+      
+
+      if(bgColor=="white"){
+        rap.style.backgroundColor = 'black'; 
+        ele.style.color='white';
+        circle.style.transform='translateX(140px)';
+
+      }else{
+        rap.style.backgroundColor = 'white'; 
+        ele.style.color='black';
+        circle.style.transform='translateX(0px)';
+      }
+       
+    });
+    
+  </script>
+</body>
+</html>
